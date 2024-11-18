@@ -43,13 +43,13 @@ $$
 
 原始的样本与增强后的样本对比, 例如左图与右图所示:
 
-<div style="display: flex; justify-content: space-between;">
-    <div>
-        <img src="../assets/example.jpg" width="300" height="250"/>
+<div style="display: flex; justify-content: space-between; width: 100%;">
+    <div style="width: 50%;">
+        <img src="../assets/example.jpg" style="width: 100%; height: 80%;"/>
     </div>
-    <div>
-        <img src="../assets/abs_aug_examle.jpg" width="300" height="250"/>
+    <div style="width: 50%;">
+        <img src="../assets/abs_aug_examle.jpg" style="width: 100%; height: 80%;"/>
     </div>
 </div>
 
-右图增强后的训练样本十分抽象, 所以我们称这种方法为抽象增强方法. 这种方法只要增强方法集合足够大, 就可以保证小样本以百倍千倍的数量扩充, 而能够保持数据的多样性和可变性. 这种方法, 主要是提升模型的泛化性和鲁棒性.
+右图增强后的训练样本十分抽象, 所以我们称这种方法为抽象增强方法. 这种方法只要增强方法集合足够大, 就可以保证小样本以百倍千倍的数量扩充, 而能够保持数据的多样性和可变性. 这种方法, 主要是为提升模型的泛化性和鲁棒性做数据准备.
