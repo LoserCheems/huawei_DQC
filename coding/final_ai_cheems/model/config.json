@@ -1,0 +1,84 @@
+{
+    "model_algorithm": "yolov5_ascend_cpu",
+    "model_type": "PyTorch",
+    "runtime": "pytorch_1.8.0-cuda_10.2-py_3.7-ubuntu_18.04-x86_64",
+    "apis": [{
+        "protocol": "http",
+        "url": "/",
+        "method": "post",
+        "request": {
+            "Content-type": "multipart/form-data",
+            "data": {
+                "type": "object",
+                "properties": {
+                    "images": {
+                        "type": "file"
+                    }
+                }
+            }
+        },
+        "response": {
+            "Content-type": "multipart/form-data",
+            "data": {
+                "type": "object",
+                "properties": {
+                    "detection_classes": {
+                        "type": "array",
+                        "items": [{
+                            "type": "string"
+                        }]
+                    },
+                    "detection_boxes": {
+                        "type": "array",
+                        "items": [{
+                            "type": "array",
+                            "minItems": 4,
+                            "maxItems": 4,
+                            "items": [{
+                                "type": "number"
+                            }]
+                        }]
+                    },
+                    "detection_scores": {
+                        "type": "array",
+                        "items": [{
+                            "type": "number"
+                        }]
+                    }
+                }
+            }
+        }
+    }],
+    "dependencies": [
+        {
+            "installer": "pip",
+            "packages": [
+                {
+                    "package_name": "Pillow",
+                    "package_version": "9.1.0",
+                    "restraint": "EXACT"
+                },
+                {
+                    "package_name": "seaborn",
+                    "package_version": "0.11.2",
+                    "restraint": "EXACT"
+                },
+                {
+                    "package_name": "thop",
+                    "package_version": "0.1.1.post2209072238",
+                    "restraint": "EXACT"
+                },
+                {
+                    "package_name": "ultralytics"
+                },
+                {
+                    "package_name": "dill"
+                }
+            ]
+        }
+
+    ]
+}
+
+
+

@@ -1,0 +1,40 @@
+# coding=utf-8
+# Copyright 2024 Jingze Shi and Bingheng Wu.    All rights reserved.
+
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+
+#     http://www.apache.org/licenses/LICENSE-2.0
+
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and limitations under the License.
+
+
+
+# Base ----------------------------------------
+matplotlib>=3.2.2
+numpy>=1.18.5
+opencv-python>=4.1.2
+Pillow==9.1.0
+PyYAML>=5.3.1
+requests>=2.23.0
+scipy>=1.4.1
+torchvision==0.12.0 
+tqdm>=4.41.0
+ultralytics
+dill
+fastapi
+
+# Plotting ------------------------------------
+pandas>=1.1.4
+seaborn==0.11.2
+
+pycocotools>=2.0  # COCO mAP
+thop  # FLOPs computation
+
+#torch-1.11.0-cp39-cp39-manylinux2014_aarch64.whl
+#torch_npu-1.11.0.post4-cp39-cp39-linux_aarch64.whl
+#apex-0.1_ascend-cp39-cp39-linux_aarch64.whl
