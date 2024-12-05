@@ -12,7 +12,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and limitations under the License. -->
 
-# 终审Top10改进
+# 挑战杯揭榜挂帅国一(Cheems的24k钛合金激光眼)
 
 **团队:** Thank you Cheems
 
@@ -124,3 +124,20 @@ $$
 最重要的是, 我们的方法在实际工业质检场景中, 也能够取得不错的效果.
 
 ![pcb](./assets/pcb.png) 
+
+### 面向实际焊接场景缺陷扩展
+为了面向实际生产应用，基于labling工具通过手工标注，制造实际焊接中可能出现的四种缺陷来满足扩大应用场景的需求
+- bridging(桥接)
+- soalder_ball（锡球飞溅）
+- blocking（锡球粘连）
+- scratch（划痕）<p>
+**根据实际可以扩展标注来满足更多检测需求**
+
+### Rk3568 开发板实时边缘检测
+
+为了满足实际工业质检的需求，我们将模型部署于开发板Rk3568上，实现基于NPU的实时视频流推理.
+
+- 利用瑞芯微官方提供的`rknn-toolkit-lite2`库将pytorch模型包转化为能够被python调用的`RKNN`模型包,将pytorch模型包在PC端转化为RKNN模型包后RKNN在RK3568开发板上加载使用。
+- 针对官方提供的 `C pi` 和 `Python pi`两种解决方案，本团队选取的是 `Python pi`。
+- 由于最初训练选区的是模型深度更深，模型精度更精确的yolov8x 系列模型，所以在实际连扳推理时帧率并未达到绝对理想状态，针对实际工业质检生产的需求选取yolov5s系列的小模型会更适应实际需求。 
+![alt text](assets/Rk3568.jpg)
